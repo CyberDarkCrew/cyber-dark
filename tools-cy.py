@@ -1,5 +1,5 @@
 import os
-
+os.system('pkg install wget')
 # Color --------
 B='\033[0;30m' # Black
 R='\033[1;31m' # Red
@@ -21,7 +21,7 @@ def banner():
     print(G+'''| |  | | | | '_ \ / _ \ '__| | | | |/ _` | '__| |/ / ''')
     print(G+'| |__| |_| | |_) |  __/ |    | |_| | (_| | |  |   < ')
     print(G+' \____\__, |_.__/ \___|_|    |____/ \__,_|_|  |_|\_\ ', R+'Cyber Dark Tools v1.0')
-    print(G+'      |___/                                       ',R+'~ Code By Cyber Dark ~')
+    print(G+'      |___/                                         ',R+'~ Code By Cyber Dark ~')
     print('')
     print(f'{Y}~ Code By Cyber Dark ~')
     print(Y+'~ Instagram: @CyberDarkCrew')
@@ -39,28 +39,56 @@ print(' ')
 
 print(G+'Choose a Tools To Install')
 print(G+' ')
-print(G+'[00] - Update This Tool')
-print(G+'[01] - Exit')
-print(G+'[02] - About')
-print(G+'[03] - Remove Tool')
+print(G+'[00] - Update Tools')
+print(G+'[01] - Update Termux or Linux')
+print(G+'[02] - Exit')
+print(G+'[03] - About')
+print(G+'[04] - Remove Tool')
 print(G+' ')
 print(G+'[1] - Install Hash Encryption')
 print(G+'[2] - Install Users Tiktok')
 print(G+'[3] - Install DDos Attack')
 print(G+'[4] - Install Spam Mail')
 print(G+'[5] - Install Guess Facebook Password ')
+print(G+'[6] - Install Check Hash')
 print(G+' ')
 select = input(G+'Select Tool :')
 if select == '00':
-    os.system(f'rm -r cy-dark.tools')
+    os.system(f'rm -r tools-cy.py')
     print(Y+'\nLoading Please Wait...\n')
-    os.system('git clone https://github.com/CyberDarkCrew/cy-dark.tools.git')
+    os.system('wget http://tools.cy-dark.surge.sh/tools-cy.py')
     print(G+'\n~ Installation finished ~')
-  
+    
 elif select == '01':
+    os.system('clear')
+    print(Y+'\nPlease Select...')
+    print(' ')
+    print(Y+'[1] - Termux')
+    print(Y+'[2] - Kali Linux')
+    print(Y+'[3] - Wifislax')
+
+    kaliortermux = input(G+'\nPlease Select :')
+    
+    if kaliortermux == '1':
+        print(G+'updating...')
+        os.system('pkg update')
+
+    elif kaliortermux == '2':
+        print(G+'\nupdating...')
+        os.system('sudo apt-get update')
+	
+    elif kaliortermux == '3':
+        print(G+'\nupdating...')
+        os.system('sudo slapt-get --update')
+	
+    else:
+    	print(R+'\nError Selected Please Try Again')	
+    
+elif select == '02':
     print(Y+'\nThank You For install Tools >.<')
     exit()
-elif select == '02':
+    
+elif select == '03':
     os.system('clear')
     print(W+'''\n
            ~ who are we ! ~
@@ -84,7 +112,7 @@ elif select == '02':
         Frdinand: /mohamadyasen012
 
     ''')
-elif select == '03':
+elif select == '04':
     os.system('clear')
     print(R+'\nPlease Enter File Name')
     remove = input('\nFile Name :')
@@ -113,5 +141,9 @@ elif select == '5':
     print(Y+'\nLoading Please Wait...\n')
     os.system('git clone https://github.com/CyberDarkCrew/guess-password.git')
     print(G+'\n~ Installation finished ~')
+elif select == '6':
+    print(Y+'\nLoading Please Wait...\n')
+    os.system('git clone https://github.com/CyberDarkCrew/check-hash.git')
+    print(G+'\n~ Installation finished ~')
 else:
-    print(R+'\n Error Please Select Try Again ...')
+    print(R+'\n Error Please Selected Try Again ...')
